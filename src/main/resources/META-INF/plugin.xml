@@ -3,6 +3,8 @@
     <name>Rsx-IJ</name>
     <vendor email="michaelbguo@tencent.com">guobin211</vendor>
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.json</depends>
     <description><![CDATA[
     <!-- Plugin description -->
 rsx language support for IntelliJ IDEA

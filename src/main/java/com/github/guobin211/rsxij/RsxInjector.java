@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class RsxInjector implements MultiHostInjector {
     @Override
@@ -25,7 +26,7 @@ public class RsxInjector implements MultiHostInjector {
     private void injectLanguage(@NotNull MultiHostRegistrar registrar, @NotNull PsiElement context, @NotNull IElementType elementType, @NotNull String languageID) {
         PsiElement block = findChildByType(context, elementType);
         if (block != null) {
-            registrar.startInjecting(Language.findLanguageByID(languageID))
+            registrar.startInjecting(Objects.requireNonNull(Language.findLanguageByID(languageID)))
                 .addPlace(null, null, (PsiLanguageInjectionHost) context, new TextRange(block.getStartOffsetInParent(), block.getTextLength()))
                 .doneInjecting();
         }

@@ -1,7 +1,10 @@
-// 按如下规则生成bnf文件, rsx文件内容分为4块，分别是rust代码块，js代码块，html代码块，和css代码块, 代码块之间用换行符分隔.
-// rust代码在---和---之间，js代码在<script>和</script>之间，html代码在<template>和</template>之间，css代码在<style>和</style>之间.
-// 所有的代码块最多出现一次，且出现的顺序是rust代码块，js代码块，html代码块，css代码块.
-// ---和<script>和<template>和<style>都单独站一行，并且在行首
+/*
+按如下规则生成bnf文件, rsx文件内容分为4块，分别是rust代码块，js代码块，html代码块，和css代码块, 代码块之间用换行分隔.
+rust代码在---和---之间，js代码在<script>和</script>之间，html代码在<template>和</template>之间，css代码在<style>和</style>之间.
+rsx文件的第一行必须为---，之后是rust代码块，rust代码块结束符---.
+所有的代码块最多出现一次，且出现的顺序是rust代码块，js代码块，html代码块，css代码块.
+---和<script>和<template>和<style>都单独站一行，并且在行首
+*/
 
 {
   parserClass="com.github.guobin211.rsxij.RsxParser"
